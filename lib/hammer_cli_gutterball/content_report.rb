@@ -3,6 +3,8 @@ module HammerCLIGutterball
     resource :content_reports
 
     class ContentHostStatus < InfoCommand
+      include HammerCLIForemanTasks::Async
+
       action :system_status
       command_name 'content-host-status'
 
@@ -14,6 +16,8 @@ module HammerCLIGutterball
     end
 
     class ContentHostTrend < InfoCommand
+      include HammerCLIForemanTasks::Async
+
       action :system_trend
       command_name 'content-host-trend'
 
@@ -25,6 +29,8 @@ module HammerCLIGutterball
     end
 
     class StatusTrend < InfoCommand
+      include HammerCLIForemanTasks::Async
+
       action :status_trend
       command_name 'status-trend'
 
