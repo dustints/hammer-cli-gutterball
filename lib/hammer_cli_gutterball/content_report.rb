@@ -190,6 +190,7 @@ module HammerCLIGutterball
 
     class StatusTrend < InfoCommand
       include HammerCLIForemanTasks::Async
+      include ReportPrintable
 
       action :status_trend
       command_name 'status-trend'
