@@ -2,6 +2,10 @@ module HammerCLIGutterball
   class ContentReportsCommand < Command
     resource :content_reports
     module ReportPrintable
+      def adapter
+        :csv
+      end
+
       def execute
         if option_async?
           super
