@@ -13,10 +13,8 @@ module HammerCLIGutterball
           request = send_request
           task_id = request.is_a?(Hash) ? request['id'] : request
           task_progress(request)
-          taskoutput = load_task(task_id)
-          if taskoutput['output'] && taskoutput['output']['report_data']
-            print_data(taskoutput['output']['report_data'])
-          end
+          data = load_task(task_id)['output']['report_data']
+          print_data(data) unless data.empty?
           HammerCLI::EX_OK
         end
       end
@@ -30,8 +28,9 @@ module HammerCLIGutterball
       command_name 'content-host-status'
 
       output do
-        field :system_name, 'Hostname'
-        field :status_status, 'Status'
+        field :name, 'Hostname'
+        field :status, 'Status'
+        field :date, "Date"
       end
 
       build_options
