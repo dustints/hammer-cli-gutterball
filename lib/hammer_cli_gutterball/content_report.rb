@@ -30,7 +30,7 @@ module HammerCLIGutterball
       output do
         field :name, 'Hostname'
         field :status, 'Status'
-        field :date, "Date"
+        field :date, 'Date'
       end
 
       build_options
@@ -45,7 +45,7 @@ module HammerCLIGutterball
 
       output do
         field :date, 'Date'
-        field :status_status, 'Status'
+        field :status, 'Status'
       end
 
       build_options
@@ -59,9 +59,10 @@ module HammerCLIGutterball
       command_name 'status-trend'
 
       output do
-        field :timestamp, 'Timestamp'
-        field :valid, 'valid'
-        field :invalid, 'invalid'
+        field :date, 'Date'
+        field :valid, 'Valid'
+        field :invalid, 'Invalid'
+        field :partial, "Partial"
       end
 
       build_options
